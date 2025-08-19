@@ -88,13 +88,25 @@ Request body:
 
 ```json
 {
-	"restaurant_name": "Pizza Palace",
-	"restaurant_lat": 40.7128,
-	"restaurant_lon": -74.006,
-	"customer_name": "John Doe",
-	"customer_lat": 40.7589,
-	"customer_lon": -73.9851,
-	"prep_time_minutes": 15.0
+    "restaurant_name": "Truffles",
+    "restaurant_lat": 12.9620,
+    "restaurant_lon": 77.6386,
+    "customer_name": "Ananya Mehta",
+    "customer_lat": 12.9652,
+    "customer_lon": 77.6101,
+    "prep_time_minutes": 15.0
+}
+```
+-  For second order
+```json
+{
+    "restaurant_name": "Empire Restaurant",
+    "restaurant_lat": 12.9351,
+    "restaurant_lon": 77.6250,
+    "customer_name": "Rohit Sharma",
+    "customer_lat": 12.9279,
+    "customer_lon": 77.6271,
+    "prep_time_minutes": 10.0
 }
 ```
 
@@ -114,14 +126,14 @@ Curl example:
 curl -X POST http://localhost:8080/api/v1/order/create \
   -H 'Content-Type: application/json' \
   -d '{
-    "restaurant_name": "Pizza Palace",
-    "restaurant_lat": 40.7128,
-    "restaurant_lon": -74.006,
-    "customer_name": "John Doe",
-    "customer_lat": 40.7589,
-    "customer_lon": -73.9851,
+    "restaurant_name": "Truffles",
+    "restaurant_lat": 12.9620,
+    "restaurant_lon": 77.6386,
+    "customer_name": "Ananya Mehta",
+    "customer_lat": 12.9652,
+    "customer_lon": 77.6101,
     "prep_time_minutes": 15.0
-  }'
+}'
 ```
 
 ### 2) Get Best Route
@@ -146,21 +158,29 @@ Response (200 OK):
 
 ```json
 {
-	"total_time_minutes": 45.5,
-	"route": [
-		{
-			"step": "Pizza Palace",
-			"location_id": 12,
-			"time_taken_minutes": 10.2
-		},
-		{ "step": "John Doe", "location_id": 13, "time_taken_minutes": 8.3 },
-		{
-			"step": "Burger Barn",
-			"location_id": 18,
-			"time_taken_minutes": 12.1
-		},
-		{ "step": "Jane Roe", "location_id": 19, "time_taken_minutes": 14.9 }
-	]
+    "total_time_minutes": 52.178401910206894,
+    "route": [
+        {
+            "step": "Empire Restaurant",
+            "location_id": 5,
+            "time_taken_minutes": 13.381407234709194
+        },
+        {
+            "step": "Rohit Sharma",
+            "location_id": 6,
+            "time_taken_minutes": 2.496967359325224
+        },
+        {
+            "step": "Truffles",
+            "location_id": 7,
+            "time_taken_minutes": 26.973886989705857
+        },
+        {
+            "step": "Ananya Mehta",
+            "location_id": 8,
+            "time_taken_minutes": 9.326140326466621
+        }
+    ]
 }
 ```
 
