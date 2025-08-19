@@ -146,12 +146,12 @@ Query parameters:
 
 -   `lat` (float, required): Rider latitude
 -   `lon` (float, required): Rider longitude
--   `orderIds` (string, required): Comma separated two order IDs, e.g. `1,2`
+-   `orderIds` (string, required): Comma separated two order IDs, e.g. `3,4`
 
 Example request:
 
 ```
-GET /api/v1/order/best_route?lat=40.7505&lon=-73.9934&orderIds=1,2
+GET /api/v1/order/best_route?lat=40.7505&lon=-73.9934&orderIds=3,4
 ```
 
 Response (200 OK):
@@ -187,7 +187,7 @@ Response (200 OK):
 Curl example:
 
 ```bash
-curl "http://localhost:8080/api/v1/order/best_route?lat=40.7505&lon=-73.9934&orderIds=1,2"
+curl "http://localhost:8080/api/v1/order/best_route?lat=40.7505&lon=-73.9934&orderIds=3,4"
 ```
 
 Notes on algorithm:
