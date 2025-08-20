@@ -19,3 +19,19 @@ type Order struct {
 	CreatedAt time.Time `json:"createdAt"`
 	UpdatedAt time.Time `json:"updatedAt"`
 }
+
+type VehicleModel struct {
+	MakeId int64 `json:"Make_ID"`
+	MakeName string `json:"Make_Name"`
+	ModelId int64 `json:"Model_ID"`
+	ModelName string `json:"Model_Name"`
+}
+
+// VeichlesSold 
+
+type VPICResponse struct {
+	Count int `json:"Count"`
+	Message string `json:"Message"`
+	SearchCriteria string `json:"SearchCriteria"`
+	Results []VehicleModel `json:"Results"`
+}
